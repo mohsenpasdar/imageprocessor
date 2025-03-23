@@ -16,5 +16,5 @@ public abstract class Converter {
         ImageIO.write(processedImage, "PNG", outputFile);
     }
 
-    public abstract BufferedImage specificConvert(BufferedImage original);
+    public abstract BufferedImage specificConvert(BufferedImage image);
 }
