@@ -5,34 +5,34 @@ public class FlipHorizontal extends Converter {
     @Override
     public BufferedImage specificConvert(BufferedImage image) {
         int j = 0;
-        helperAllRows(j, image);
+        helperFlipAllRows(j, image);
         return image;
     }
 
-    private void helperAllRows(int j, BufferedImage image) {
-        if (j == image.getHeight()) {
+    private void helperFlipAllRows(int row, BufferedImage image) {
+        if (row == image.getHeight()) {
             return;
         }
-        int i = 0;
-        helperRow(i, j, image);
-        j++;
-        helperAllRows(j, image);
+        int column = 0;
+        helperFlipRow(column, row, image);
+        row++;
+        helperFlipAllRows(row, image);
     }
 
-    private void helperRow(int i, int j, BufferedImage image) {
-        if (i == image.getWidth() / 2) {
+    private void helperFlipRow(int column, int row, BufferedImage image) {
+        if (column == image.getWidth() / 2) {
             return;
         }
-        swap(i, j, image);
-        i++;
-        helperRow(i, j, image);
+        swapRowPixels(column, row, image);
+        column++;
+        helperFlipRow(column, row, image);
     }
 
-    private void swap(int i, int j, BufferedImage image) {
+    private void swapRowPixels(int column, int row, BufferedImage image) {
         int width = image.getWidth();
-        int pixelIJ = image.getRGB(i, j);
-        int swappedPixel = image.getRGB(width - i - 1, j);
-        image.setRGB(i, j, swappedPixel);
-        image.setRGB(width - i - 1, j, pixelIJ);
+        int pixelIJ = image.getRGB(column, row);
+        int swappedPixel = image.getRGB(width - column - 1, row);
+        image.setRGB(column, row, swappedPixel);
+        image.setRGB(width - column - 1, row, pixelIJ);
     }
 }
