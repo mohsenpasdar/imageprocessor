@@ -4,8 +4,8 @@ public class FlipHorizontal extends Converter {
 
     @Override
     public BufferedImage specificConvert(BufferedImage image) {
-        int j = 0;
-        helperFlipAllRows(j, image);
+        int row = 0;
+        helperFlipAllRows(row, image);
         return image;
     }
 

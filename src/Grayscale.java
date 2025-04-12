@@ -14,9 +14,9 @@ public class Grayscale extends Converter {
                 int green = pixelARGB.green;
                 int blue = pixelARGB.blue;
                 int gray = (red + green + blue) / 3;
-                pixelARGB = new ARGB(alpha, gray, gray, gray);
-                pixelInt = pixelARGB.toInt();
-                image.setRGB(i, j, pixelInt);
+                ARGB newPixelARGB = new ARGB(alpha, gray, gray, gray);
+                int newPixelInt = newPixelARGB.toInt();
+                image.setRGB(i, j, newPixelInt);
             }
         }
         return image;
