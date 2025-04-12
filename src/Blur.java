@@ -7,8 +7,8 @@ public class Blur extends Converter {
         int height = image.getHeight();
         BufferedImage newImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
 
-        for (int i = 1; i < width - 1; i++) {
-            for (int j = 1; j < height - 1; j++) {
+        for (int i = 0; i < width; i++) {
+            for (int j = 0; j < height; j++) {
                 newImage.setRGB(i, j, averagePixelInt(image, i, j));
             }
         }
@@ -16,13 +16,19 @@ public class Blur extends Converter {
     }
 
     protected int averagePixelInt(BufferedImage image, int x, int y) {
+        int width = image.getWidth();
+        int height = image.getHeight();
+
         int sumAlpha = 0;
         int sumRed = 0;
         int sumGreen = 0;
         int sumBlue = 0;
+
         for (int i = x - 1; i <= x + 1; i++) {
             for (int j = y - 1; j <= y + 1 ; j++) {
-                int pixelInt = image.getRGB(i, j);
+                int col = Math.min(Math.max(i, 0), width - 1);
+                int row = Math.min(Math.max(j, 0), height - 1);
+                int pixelInt = image.getRGB(col, row);
                 ARGB pixelARGB = new ARGB(pixelInt);
                 sumAlpha += pixelARGB.alpha;
                 sumRed += pixelARGB.red;

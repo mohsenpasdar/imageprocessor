@@ -44,6 +44,4 @@ public class Pixelate extends Converter {
             }
         }
     }
-
-
 }
