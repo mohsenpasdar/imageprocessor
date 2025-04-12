@@ -1,6 +1,7 @@
 import java.awt.image.BufferedImage;
 
 public class Grayscale extends Converter {
+
     @Override
     public BufferedImage specificConvert(BufferedImage image) {
         int width = image.getWidth();
@@ -13,9 +14,11 @@ public class Grayscale extends Converter {
                 int red = pixelARGB.red;
                 int green = pixelARGB.green;
                 int blue = pixelARGB.blue;
+
                 int gray = (red + green + blue) / 3;
                 ARGB newPixelARGB = new ARGB(alpha, gray, gray, gray);
                 int newPixelInt = newPixelARGB.toInt();
+
                 image.setRGB(i, j, newPixelInt);
             }
         }
