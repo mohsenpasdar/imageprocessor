@@ -2,7 +2,7 @@ import java.awt.image.BufferedImage;
 
 public class InvertColors extends Converter {
     @Override
-    public BufferedImage specificConvert(BufferedImage image) {
+    public BufferedImage process(BufferedImage image) {
         int row = 0;
         helperInvertAllRows(row, image);
         return image;

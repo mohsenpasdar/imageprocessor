@@ -3,7 +3,7 @@ import java.awt.image.BufferedImage;
 public class FlipVertical extends Converter {
 
     @Override
-    public BufferedImage specificConvert(BufferedImage image) {
+    public BufferedImage process(BufferedImage image) {
         int width = image.getWidth();
         int height = image.getHeight();
         for (int i = 0; i < width; i++) {

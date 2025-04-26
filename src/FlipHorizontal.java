@@ -3,7 +3,7 @@ import java.awt.image.BufferedImage;
 public class FlipHorizontal extends Converter {
 
     @Override
-    public BufferedImage specificConvert(BufferedImage image) {
+    public BufferedImage process(BufferedImage image) {
         int row = 0;
         helperFlipAllRows(row, image);
         return image;

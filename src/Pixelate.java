@@ -2,7 +2,7 @@ import java.awt.image.BufferedImage;
 
 public class Pixelate extends Converter {
     @Override
-    public BufferedImage specificConvert(BufferedImage image) {
+    public BufferedImage process(BufferedImage image) {
         int width = image.getWidth();
         int height = image.getHeight();
         BufferedImage newImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
