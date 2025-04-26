@@ -1,7 +1,7 @@
 import java.awt.image.BufferedImage;
 
 /**
- * Pixelate converter that creates a pixelated (blocky) effect by dividing the image into blocks (3 * 3)
+ * Pixelate converter that creates a pixelated (blocky) effect by dividing the image into blocks (3x3)
  * and setting each block's pixels to the average color of that block.
  */
 public class Pixelate extends Converter {

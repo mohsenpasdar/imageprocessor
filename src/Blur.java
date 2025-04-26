@@ -2,7 +2,7 @@ import java.awt.image.BufferedImage;
 
 /**
  * Blur converter that applies a simple blur effect
- * by averaging the color values of the surrounding pixels.
+ * by averaging the color values of the surrounding pixels (3x3 block).
  */
 public class Blur extends Converter {
 
